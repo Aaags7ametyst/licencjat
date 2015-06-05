@@ -1,0 +1,16 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+    <h2 class="intro-text text-center">
+        Dodawanie nowego użytkownika do systemu
+    </h2>
+    <hr>
+    <form action="" method="post">
+        {{ form_widget(form) }}
+        <input type="submit" name="submit" />
+    </form>
+    <hr>
+{% endblock %}
+
+

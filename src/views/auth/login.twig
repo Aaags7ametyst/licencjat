@@ -1,0 +1,15 @@
+{% extends 'base.twig' %}
+
+{% block title %}Logowanie do panelu administratora{% endblock %}
+
+{% block content %}
+    <h1>
+        Logowanie do panelu administratora
+    </h1>
+    {{ error }}
+    <form action="{{ path('auth_login_check') }}" method="post">
+        {{ error }}
+        {{ form_widget(form) }}
+        <input class="btn" type="submit" name="submit">
+    </form>
+{% endblock %}

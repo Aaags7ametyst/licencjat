@@ -1,0 +1,76 @@
+{% extends 'kokpit.twig' %}
+
+{% block menu %}
+
+<nav class="navbar-default navbar-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav" id="main-menu">
+
+
+
+            <li>
+                <a class ="active-menu" href="{{ app.request.basepath }}/index.php/kokpit"><i class="fa fa-dashboard fa-3x"></i> Strona główna panelu</a>
+            </li>
+            <li>
+                <a  href="{{ app.request.basepath }}/index.php/posts/add"><i class="fa fa-edit fa-3x"></i> Dodaj przepis </a>
+            </li>
+            <li  >
+                <a  href="{{ app.request.basepath }}/index.php/categories/all"><i class="fa fa-table fa-3x"></i> Kategorie</a>
+            </li>
+
+            <li>
+                <a class=""href="{{ app.request.basepath }}/index.php/posts"><i class="fa fa-square-o fa-3x"></i>Zarządzanie wpisami</a>
+            </li>
+
+
+
+
+            <li>
+                <a href="#"><i class="fa fa-sitemap fa-3x"></i> Zarządzanie użytkownikami<span class="fa-arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="#">Second Level Link</a>
+                    </li>
+                    <li>
+                        <a href="#">Second Level Link</a>
+                    </li>
+                    <li>
+                        <a href="#">Second Level Link<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="#">Third Level Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Third Level Link</a>
+                            </li>
+                            <li>
+                                <a href="#">Third Level Link</a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+                </ul>
+            </li>
+            {#  <li>
+                <a  href="#"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
+            </li>
+            <li>
+                <a  href="#"><i class="fa fa-qrcode fa-3x"></i> Tabs & Panels</a>
+            </li>
+            <li  >
+                <a  href="#"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
+            </li> #}
+
+
+        </ul>
+
+    </div>
+
+</nav>
+
+{%  endblock %}
+{% block content %}
+    <h5>Znajdujesz się na głównej stronie panelu administratora</h5>
+    <p>Wybierz interesującą Cię opcję z menu strony</p>
+{% endblock %}

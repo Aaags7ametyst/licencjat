@@ -1,0 +1,54 @@
+{% extends 'base.twig' %}
+
+{% block menu %}
+ <div id="divMenuRight" class="pull-right">
+                            <div class="navbar">
+                                <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
+                                    NAVIGATION <span class="icon-chevron-down icon-white"></span>
+                                </button>
+                                <div class="nav-collapse collapse">
+                                    <ul class="nav nav-pills ddmenu">
+                                        <li class="dropdown"><a href="{{ app.request.basepath }}">Strona główna</a></li>
+
+                                        <li class="dropdown">
+                                            <a href= class="dropdown-toggle">Odżywianie <b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="{{ app.request.basepath }}/index.php/znaczenie">Znaczenie zdrowego odżywiania</a></li>
+                                                <li><a href="{{ app.request.basepath }}/index.php/kultura">Kuchnia i posiłki w kulturze</a></li>
+
+                                                <li class="dropdown">
+                                                    <a href="#" class="dropdown-toggle">Zbilansowana dieta &nbsp;&raquo;</a>
+                                                    <ul class="dropdown-menu sub-menu">
+                                                        <li><a href="{{ app.request.basepath }}/index.php/zbilansowanie">Węglowodany</a></li>
+                                                        <li><a href="{{ app.request.basepath }}/index.php/zbilansowanie">Białko</a></li>
+                                                        <li><a href="{{ app.request.basepath }}/index.php/zbilansowanie">Tłuszcze</a></li>
+                                                        <li><a href="{{ app.request.basepath }}/index.php/zbilansowanie">Nawodnienie i witaminy</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="{{ url('/posts/')}}">Przepisy</a></li>
+
+                                        <li class="dropdown"><a href="{{ app.request.basepath }}/index.php/kontakt">Kontakt</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="divPanel page-content">
+    <div class="breadcrumbs">
+        <a href="{{ app.request.basepath }}">Strona główna</a> &nbsp;/&nbsp;
+        <span>O stronie</span>
+    </div>
+    informacje o stronie tu będą, joł.
+    </div>
+{% endblock %}

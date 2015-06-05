@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    {% block head %}
+        <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ app.request.basepath }}/fx/css/bootstrap.css" rel="stylesheet" media="screen">
+
+
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="{{ app.request.basepath }}/fx/js/bootstrap.js"></script>
+    <script src="http://js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+    <script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+</head>
+<body>
+
+
+
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="page-header">
+
+            <h1>Studenckie odżywianie</h1>
+
+            <p>Stereotypy a rzeczywistość</p>
+        </div>
+    </div>
+    {% block menu %}
+
+    {% endblock %}
+
+    <div class="container">
+        <div>
+            {% for flashMessage in app.session.getFlashBag.get('message') %}
+                <div class="alert alert-{{ flashMessage.type }}">
+                    {{ flashMessage.content }}
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="box">
+
+                {% block content %}{% endblock %}
+
+
+            </div>
+
+        </div>
+        <div>{% block comments %} {% endblock %}</div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+
+                    {% include 'footer.twig' %}
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+</html>
+
+
+

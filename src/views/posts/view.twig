@@ -1,0 +1,97 @@
+{% extends 'base.twig' %}
+
+ {% block menu %}
+ <div id="divMenuRight" class="pull-right">
+                            <div class="navbar">
+                                <button type="button" class="btn btn-navbar-highlight btn-large btn-primary" data-toggle="collapse" data-target=".nav-collapse">
+                                    NAVIGATION <span class="icon-chevron-down icon-white"></span>
+                                </button>
+                                <div class="nav-collapse collapse">
+                                    <ul class="nav nav-pills ddmenu">
+                                        <li class="dropdown"><a href="{{ app.request.basepath }}">Strona główna</a></li>
+
+                                        <li class="dropdown">
+                                            <a href= class="dropdown-toggle">Odżywianie <b class="caret"></b></a>
+                                            <ul class="dropdown-menu">
+                                                <li><a href="{{ app.request.basepath }}/index.php/znaczenie">Znaczenie zdrowego odżywiania</a></li>
+                                                <li><a href="{{ app.request.basepath }}/index.php/kultura">Kuchnia i posiłki w kulturze</a></li>
+
+                                                <li class="dropdown">
+                                                    <a href="#" class="dropdown-toggle">Zbilansowana dieta &nbsp;&raquo;</a>
+                                                    <ul class="dropdown-menu sub-menu">
+                                                        <li><a href="{{ app.request.basepath }}/index.php/zbilansowanie">Węglowodany</a></li>
+                                                        <li><a href="{{ app.request.basepath }}/index.php/zbilansowanie">Białko</a></li>
+                                                        <li><a href="{{ app.request.basepath }}/index.php/zbilansowanie">Tłuszcze</a></li>
+                                                        <li><a href="{{ app.request.basepath }}/index.php/zbilansowanie">Nawodnienie i witaminy</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="dropdown"><a href="{{ url('/posts/')}}">Przepisy</a></li>
+
+                                        <li class="dropdown"><a href="{{ app.request.basepath }}/index.php/kontakt">Kontakt</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="divPanel page-content">
+
+        <div class="breadcrumbs">
+            <a href="{{ app.request.basepath }}">Strona główna</a> &nbsp;/&nbsp;
+            <a href="{{ url('/posts/')}}">Przepisy</a> &nbsp;/&nbsp;
+            <span>{{ post.title|e }}</span>
+        </div>
+
+
+
+            <h2 class="intro-text text-center">
+                <a href="{{ url('/posts/view', {'id': post.idpost|e}) }}" title="View post">
+                    {{ post.title|e }}
+                </a>
+            </h2>
+            <hr>
+        </h2>
+        <h2>
+            <small>{{ post.published|e }}</small>
+        </h2>
+        <p>{{ post.content|raw }}</p>
+        <a href="{{ url('/categories/', {'idcategory': post.idcategory|e}) }}">{{ post.name|e }}</a>
+
+        <hr>
+       {# {% if is_granted('ROLE_ADMIN') %}#}
+            <p>
+                <a href="{{ url('/posts/edit', {'id': post.idpost|e}) }}" title="Edit post">
+                    <button type="button" class="btn btn-warning">Edytuj post</button>
+                </a>
+                <a href="{{ url('/posts/delete', {'id': post.idpost|e}) }}" title="Delete post">
+                    <button type="button" class="btn btn-danger">Usuń post</button>
+                </a>
+
+            </p>
+      {# {% endif %}#}
+    </div>
+{% endblock %}
+
+{% block comments %}
+
+    <div>
+
+        <div>
+
+
+            {{ render( path('/comments/',{'idpost': post.idpost|e})) }}
+        </div>
+    </div>
+{% endblock %}

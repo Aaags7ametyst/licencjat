@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+    RewriteEngine On
+    RewriteBase /~aga/public_html/licencjat/Projekt_dyplomowy_zmiany/web
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>

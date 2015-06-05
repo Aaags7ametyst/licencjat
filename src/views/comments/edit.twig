@@ -1,0 +1,27 @@
+{% extends 'base.twig' %}
+{% block menu %}
+    <div id="menu">
+        <ul class="nav nav-pills">
+            <li class="active"><a href="{{ app.request.basepath }}">Strona domowa</a></li>
+            <li><a href="{{ app.request.basepath }}/index.php/znaczenie">Znaczenie zdrowego odżywiania</a></li>
+            <li><a href="{{ app.request.basepath }}/index.php/kultura">Kulturowe znaczenie</a></li>
+            <li><a href="{{ app.request.basepath }}/index.php/zbilansowanie">Zbilansowana dieta</a></li>
+            <li><a href="{{ url('/posts/')}}">Przepisy</a>
+
+            </li>
+            <li><a href="{{ app.request.basepath }}/index.php/about">O stronie</a></li>
+            <li><a href="{{ app.request.basepath }}/index.php/kontakt">Kontakt</a></li>
+        </ul>
+    </div>
+{% endblock %}
+{% block content %}
+    <hr>
+    <h2 class="intro-text text-center">
+        Edytuj komentarz
+    </h2>
+    <hr>
+    <form action="" method="post">
+        {{ form_widget(form) }}
+        <input type="submit" name="submit"/>
+    </form>
+{% endblock %}
